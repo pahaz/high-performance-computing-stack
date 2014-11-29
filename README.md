@@ -34,23 +34,23 @@ Also, you can use it for local running.
 
  2. Write your compiling and running commands
      
-    def main():
-        # put files to remote server
-        _put('kmeans.cpp')  
-        _put('data-gen.cpp')
-        
-        # compiling command && run
-        run('g++ data-gen.cpp -o data-gen && ./data-gen 3 10 10 data-gen.txt')
-        run('g++ kmeans.cpp -o kmeans -fopenmp && ./kmeans 10 data-gen.txt kmeans.txt')
-        
-        # get files from remote server
-        _get('data-gen.txt')
-        _get('kmeans.txt')
-        
-    if __name__ == "__main__":
-        local_env()  # activate local environment
-        #supercomputer_env()  # or activate supercomputer environment
-        main()  # running main :) 
+        def main():
+            # put files to remote server
+            _put('kmeans.cpp')  
+            _put('data-gen.cpp')
+            
+            # compiling command && run
+            run('g++ data-gen.cpp -o data-gen && ./data-gen 3 10 10 data-gen.txt')
+            run('g++ kmeans.cpp -o kmeans -fopenmp && ./kmeans 10 data-gen.txt kmeans.txt')
+            
+            # get files from remote server
+            _get('data-gen.txt')
+            _get('kmeans.txt')
+            
+        if __name__ == "__main__":
+            local_env()  # activate local environment
+            #supercomputer_env()  # or activate supercomputer environment
+            main()  # running main :) 
  
  3. Up container (`vagrant up`)
  4. Connect via SSH to container (`vagrant ssh`)
