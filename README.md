@@ -58,4 +58,4 @@ Also, you can use it for local running.
 
  5. Run `imm.py` (`python imm.py`)
 
- 6. Check you result
+ 6. Check result
