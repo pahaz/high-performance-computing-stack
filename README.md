@@ -21,19 +21,19 @@ Also, you can use it for local running.
 
  1. Setup you environment
 
-    def local_env():
-        env.user = 'vagrant'
-        env.password = 'vagrant'
-        env.host_string = 'localhost:22'
-    
-    
-    def cluster_env():
-        env.user = 's0*****'
-        env.password = 'Vjk******'
-        env.host_string = 'umt.imm.uran.ru:22'
+        def local_env():
+            env.user = 'vagrant'
+            env.password = 'vagrant'
+            env.host_string = 'localhost:22'
+        
+        
+        def cluster_env():
+            env.user = 's0*****'
+            env.password = 'Vjk******'
+            env.host_string = 'umt.imm.uran.ru:22'
 
  2. Write your compiling and running commands
-     
+
         def main():
             # put files to remote server
             _put('kmeans.cpp')  
@@ -51,8 +51,11 @@ Also, you can use it for local running.
             local_env()  # activate local environment
             #supercomputer_env()  # or activate supercomputer environment
             main()  # running main :) 
- 
+
  3. Up container (`vagrant up`)
+
  4. Connect via SSH to container (`vagrant ssh`)
+
  5. Run `imm.py` (`python imm.py`)
- 6. Check you result
+
+ 6. Check result
