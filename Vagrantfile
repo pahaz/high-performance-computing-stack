@@ -9,7 +9,7 @@ cd /vagrant
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-add-repository multiverse -y
+apt-add-repository multiverse
 apt-get update -y
 apt-get upgrade -y
 

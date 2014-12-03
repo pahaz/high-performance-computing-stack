@@ -4,6 +4,7 @@ from fabric.api import abort, cd, env, get, hide, hosts, local, prompt, \
 
 from fabric.colors import green, blue, cyan, magenta, red, white, yellow
 
+
 __author__ = 'pahaz'
 
 
@@ -14,13 +15,15 @@ def local_env():
 
 
 def supercomputer_env():
-    env.user = 'WRITE YOU USERNAME'
-    env.password = 'WRITE YOU PASSWORD'
+    env.user = 'YOU USERNAME'
+    env.password = 'YOU PASSWORD'
     env.host_string = 'umt.imm.uran.ru:22'
 
 
 def _put(name):
-    put(name, '~/' + name, use_sudo=False)
+    if os.path.isdir(name):
+        run('mkdir -p ~/' + name)
+    put(name, '~/', use_sudo=False)
 
 
 def _get(name):
@@ -69,15 +72,11 @@ def _cuda(name):
 
 
 def main():
-    _put('kmeans.cpp')
-    _put('data-gen.cpp')
-    run('g++ data-gen.cpp -o data-gen && ./data-gen 3 10 10 data-gen.txt')
-    _get('data-gen.txt')
-    run('g++ kmeans.cpp -o kmeans -fopenmp && ./kmeans 10 data-gen.txt kmeans.txt')
-    _get('kmeans.txt')
+    _put('life')
+    run('g++ life/data-gen.c -o life/data-gen && ./life/data-gen 30 ./life/data-gen.txt')
+    _get('./life/data-gen.txt')
 
 
 if __name__ == "__main__":
-    local_env()
-    # supercomputer_env()
+    supercomputer_env()
     main()
