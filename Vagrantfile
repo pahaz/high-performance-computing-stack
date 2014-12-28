@@ -17,16 +17,14 @@ apt-get install curl git build-essential make -y
 
 apt-get install python-dev python-setuptools -y
 easy_install pip
+easy_install virtualenv
 easy_install fabric
 
-apt-get install python3-dev python3-setuptools -y
-easy_install3 pip
+apt-get install python-mpi4py python-numpy python-scipy python-matplotlib
+apt-get install ipython ipython-notebook python-pandas python-sympy python-nose
 
-easy_install3 virtualenv
-
-# use 'pip, python, easy_install' for python2
-# use 'pip3, python3, easy_install3' for python3
-# or 'virtualenv'
+# apt-get install python3-dev python3-setuptools -y
+# easy_install3 pip
 
 # MPI
 apt-get install mpich2 -y
